@@ -25,7 +25,7 @@ const Slice = createSlice({
         },
         removeCategory : (state, action) => {
             const {categoryId} = action.payload
-            state.categories.filter(category => category.id != categoryId)
+            state.categories = state.categories.filter(category => category.id != categoryId)
         },
         changeCategoryId : (state, action) => {
             const {currentId, changedId} = action.payload

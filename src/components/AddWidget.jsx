@@ -69,14 +69,14 @@ const AddWidget = () => {
         <div className="d-flex justify-content-center align-items-center mt-5 mx-auto w-25 p-5 border rounded">
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                    <label className="form-label">Widget title</label>
+                    <label className="form-label fw-medium">Widget title : </label>
                     <input type="text" className="form-control" name="title" onBlur={validateForm} onChange={formInput}/>
-                    <div className="text text-danger">{errors.title.charAt(0).toUpperCase() + errors.title.slice(1)}</div>
+                    <div className="text text-danger">{errors.title.slice(0,2) + errors.title.charAt(2).toUpperCase() + errors.title.slice(3)}</div>
                 </div>
                 <div className="mb-3">
-                    <label>Content</label>
+                    <label className="form-label fw-medium">Content : </label>
                     <textarea className="form-control" name="content" onBlur={validateForm} onChange={formInput}></textarea>
-                    <div className="text text-danger">{errors.content.charAt(0).toUpperCase() + errors.content.slice(1)}</div>
+                    <div className="text text-danger">{errors.content.slice(0,2) + errors.content.charAt(2).toUpperCase() + errors.content.slice(3)}</div>
                 </div>
                 <button type="submit" className="btn btn-primary">Create</button>
             </form>
