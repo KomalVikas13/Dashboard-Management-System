@@ -36,17 +36,26 @@ const Categories = () => {
 
 
             return (
-                <div className="d-flex flex-column">
-                    <div className="d-flex flex-row border-bottom">
-                        <h3 className="mt-3 ms-3 text-primary w-75">Dashboard</h3>
-                        <button type="button" className="btn btn-outline-primary m-auto" style={{'--bs-border-opacity': .5}} onClick={addCategoryEvent}><i className="fa-solid fa-plus"></i> Add Category</button>
+                <>
+                <div className="d-flex flex-row justify-content-between align-items-center">
+                        <p className="text w-25 mt-3 ms-3">Home {'>'} <b>DashboardV2</b></p>
+                    <div className="d-flex w-25 bg-light-subtle border rounded align-items-center justify-content-left">
+                        <i class="fa-solid fa-magnifying-glass ps-2"></i>
+                        <input type="text" className="btn" placeholder="Search anything.."></input>
+                    </div>
+                    <div></div>
+                </div>
+                <div className="d-flex flex-column bg-light pt-3" style={{height : "100vh"}}>
+                    <div className="d-flex flex-row border-bottom pb-2">
+                        <h4 className="mt-3 ms-3 text-primary w-75">CNAPP Dashboard</h4>
+                        <button type="button" className="btn btn-outline-secondary m-auto" style={{'--bs-border-opacity': .5}} onClick={addCategoryEvent}><i className="fa-solid fa-plus"></i> Add Category</button>
                         </div>
-                    <div className="d-flex flex-column m-3 gap-3">
+                    <div className="d-flex flex-column m-1 gap-3">
                     {categories.map((category, catIndex) => (
-                        <div className="d-flex flex-column bg-light border rounded" key={catIndex}>
+                        <div className="d-flex flex-column" key={catIndex}>
                             <div className="d-flex flex-row justify-content-between p-2">
-                                <h4 className="text-secondary mt-3 ms-3 text-primary w-75">{category.name}</h4>
-                                <button type="button" className="btn btn-outline-danger align-self-center" style={{'--bs-border-opacity': .5}} onClick={() => removeCategoryEvent(category.id)}><i className="fa-solid fa-xmark"></i> Remove Category</button>
+                                <h5 className="text-secondary mt-3 text-primary w-75">{category.name}</h5>
+                                <button type="button" className="btn btn-outline-danger align-self-center" style={{'--bs-border-opacity': .5}} onClick={() => removeCategoryEvent(category.id)}><i className="fa-solid fa-xmark"></i> Remove</button>
                                 </div>
                             <div className="d-inline-flex flex-row flex-wrap mb-3">
                                 {category.widgets.filter(widget => widget.id != 0).map((widget, widgetIndex) => (
@@ -62,6 +71,7 @@ const Categories = () => {
                     ))}
                     </div>
                 </div>
+            </>
             );
             };
 

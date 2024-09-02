@@ -2,7 +2,7 @@ const ApplicationState = {
     categories: [
         {
             id: 1,
-            name: "Default Category",
+            name: "CSPM Executive Dashboard",
             widgets: [
                 {
                     id : 0,
